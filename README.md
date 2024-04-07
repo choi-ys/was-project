@@ -20,7 +20,7 @@ Header
 Blank line
 Body
 
-# Step1 : 메인 쓰레드를 이용한 Http 요청을 처리
+# Step1 : 메인 쓰레드를 이용한 Http 요청 처리
 ## Step1의 구현 내용
 - Socket을 이용한 Client <-> Server 통신 구조 정의
 - Http Protocol에 따라 통신하기 위한 Http request/response 도메인 객체 생성
@@ -45,3 +45,6 @@ Body
 
 ## Step2의 한계점 해결
 - 클라이언트 요청 시 마다 쓰레드를 생성하여 처리하는 것이 아닌, 요청을 처리할 쓰레드를 고정된 개수만큼 생성하고, 이를 재활용하는 Thread Pool을 적용하여 안정적인 서비스 제공
+
+# Step 3 : Thread Pool을 이용한 Http 요청 처리
+- 제한된 숫자의 쓰레드를 미리 생성하여 재활용 할 수 있는 Thread pool 적용하여 클라이언트 요청 시, Thread pool에 미리 생성된 쓰레드를 이용하여 클라이언트의 요청 처리
